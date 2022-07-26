@@ -14,6 +14,9 @@ function App () {
                 setInput('');
                 setOutput(0);
                 break;
+            case 'delete':
+                setInput(input.slice(0, input.length - 1));
+                break;
             default:
                 break;
         }
