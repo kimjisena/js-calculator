@@ -11,7 +11,8 @@ module.exports = {
       'gray-one': '#58647B', // #54657F
       'gray-two': '#7B8699', // #79889C
       'white': '#CBD7EC', // #B8C6D2
-      'clear-btn-bg': '#BC6E81' // #BD7685
+      'clear-btn-bg': '#BC6E81', // #BD7685
+      'panel-bg': '#2F2F2F'
     },
     fontFamily: {
       'line-one': ['casio_fx-9860giiregular', 'sans-serif'],
