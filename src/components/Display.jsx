@@ -1,6 +1,7 @@
 import React from 'react';
 
-function Display () {
+function Display ({input, output}) {
+
     return (
         <>
             <div id='top' className={`flex flex-col justify-evenly items-center w-[90%] h-48 bg-black mt-4 rounded-3xl`}>
@@ -14,11 +15,11 @@ function Display () {
                 <div id='display' className={`flex flex-col justify-evenly items-center w-[90%] h-[40%] bg-display-bg`}>
 
                     <div id='input-line' className={`w-full text-right text-display-fg font-line-one text-xl font-bold`}>
-                        Math.sqrt(69)
+                        {input}
                     </div>
 
                     <div id='output-line' className={`w-full text-right text-display-fg font-line-two text-4xl font-bold pr-2`}>
-                        ATE SOMETHING
+                        {output}
                     </div>
 
                 </div>
