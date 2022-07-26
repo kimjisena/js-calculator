@@ -4,7 +4,7 @@ function Display () {
     return (
         <>
             <div id='top' className={`flex flex-col justify-evenly items-center w-[90%] h-48 bg-black mt-4 rounded-3xl`}>
-                <div id='panel' className={`flex justify-evenly w-[90%] h-1/4 bg-panel-bg mt-2`}>
+                <div id='panel' className={`flex justify-evenly w-[90%] h-1/4 bg-panel-bg mt-1`}>
                     <div id='panel-divider' className={`w-[2px] h-full bg-black`}></div>
                     <div id='panel-divider' className={`w-[2px] h-full bg-black`}></div>
                     <div id='panel-divider' className={`w-[2px] h-full bg-black`}></div>
