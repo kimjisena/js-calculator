@@ -1,48 +1,56 @@
 import React from 'react';
+import InputRow from './InputRow';
+
+const inputRows = {
+    rowOne: [
+        {name: 'seven', value: 7},
+        {name: 'eight', value: 8},
+        {name: 'nine', value: 9},
+        {name: 'delete', value: 'DEL'},
+        {name: 'clear', value: 'AC'},
+    ],
+
+    rowTwo: [
+        {name: 'four', value: 4},
+        {name: 'five', value: 5},
+        {name: 'six', value: 6},
+        {name: 'multiply', value: 'x'},
+        {name: 'divide', value: '/'},
+    ],
+
+    rowThree: [
+        {name: 'one', value: 1},
+        {name: 'two', value: 2},
+        {name: 'three', value: 3},
+        {name: 'add', value: '+'},
+        {name: 'subtract', value: '-'},
+    ],
+
+    rowFour: [
+        {name: 'zero', value: 0},
+        {name: 'decimal', value: '.'},
+        {name: 'exponent', value: 'EXP'},
+        {name: 'answer', value: 'Ans'},
+        {name: 'equals', value: '='},
+    ]
+}
 
 function Input () {
     return (
         <>
-            <div id='stdin' className={`flex flex-col justify-evenly h-[60%] w-[90%] bg-input-wrapper text-button-fg`}>
+            <div id='stdin' className={`flex flex-col justify-evenly h-[50%] w-[90%]`}>
                 {/* first row: 7, 8, 9, DEL, AC*/}
-                <div id='first-row' className={`flex justify-evenly`}>
-                    <div id='seven' className={`flex justify-center items-center w-16 h-8 bg-button-bg rounded-t-md rounded-b-xl shadow-sm shadow-black text-xl font-bold`}>
-                        7
-                    </div>
-                    <div id='eight'>8</div>
-                    <div id='nine'>9</div>
-                    <div id='delete'>DEL</div>
-                    <div id='clear'>AC</div>
-                </div>
-
+                <InputRow buttons={inputRows.rowOne} />
 
                 {/* second row: 4, 5, 6, x, / */}
-                <div id='second-row' className={`flex justify-evenly`}>
-                    <div id='four'>4</div>
-                    <div id='five'>5</div>
-                    <div id='six'>6</div>
-                    <div id='multiply'>x</div>
-                    <div id='divide'>/</div>  
-                </div>
+                <InputRow buttons={inputRows.rowTwo} />
 
                 {/* third row: 1, 2, 3, +, - */}
-                <div id='third-row' className={`flex justify-evenly`}>
-                    <div id='one'>1</div>
-                    <div id='two'>2</div>
-                    <div id='three'>3</div>
-                    <div id='add'>+</div>
-                    <div id='subtract'>-</div>
-                </div>
+                <InputRow buttons={inputRows.rowThree} />
 
 
                 {/* fourth row: 0, ., EXP, Ans, = */}
-                <div id='fourth-row' className={`flex justify-evenly`}>
-                    <div id='zero'>0</div>
-                    <div id='decimal'>.</div>
-                    <div id='exponent'>EXP</div>
-                    <div id='answer'>Ans</div>
-                    <div id='equals'>=</div>
-                </div>
+                <InputRow buttons={inputRows.rowFour} />
             </div>
         </>
     );

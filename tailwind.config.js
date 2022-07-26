@@ -8,9 +8,9 @@ module.exports = {
       'display-bg': '#A6CCB4', // #A6CAB8
       'display-fg': '#1C3A26', // #051408
       'black': '#01020A', // #03020C
-      'input-wrapper': '#58647B', // #54657F
-      'button-bg': '#7B8699', // #79889C
-      'button-fg': '#CBD7EC', // #B8C6D2
+      'gray-one': '#58647B', // #54657F
+      'gray-two': '#7B8699', // #79889C
+      'white': '#CBD7EC', // #B8C6D2
       'clear-btn-bg': '#BC6E81' // #BD7685
     },
     fontFamily: {
