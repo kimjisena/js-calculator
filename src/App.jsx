@@ -1,9 +1,7 @@
-
 function App() {
   return (
     <div className={`app`}>
-      <h1>Hello, JavaScript Calculator</h1>
-      <h2>JavaScriptor!</h2>
+      <h1 className={`text-lg text-center text-display-fg bg-display-bg font-line-one`}>JavaScript Calculator</h1>
     </div>
   );
 }

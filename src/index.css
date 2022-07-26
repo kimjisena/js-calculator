@@ -13,10 +13,6 @@
       format('svg');
 }
 
-h1 {
-  font-family: 'casio_fx-9860giiregular', sans-serif;
-}
-
-h2 {
-  font-family: 'Digital';
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
