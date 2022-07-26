@@ -3,10 +3,12 @@ import React from 'react';
 function Input () {
     return (
         <>
-            <div id='stdin' className={`flex flex-col justify-evenly h-[60%] w-[90%] bg-input-wrapper`}>
+            <div id='stdin' className={`flex flex-col justify-evenly h-[60%] w-[90%] bg-input-wrapper text-button-fg`}>
                 {/* first row: 7, 8, 9, DEL, AC*/}
                 <div id='first-row' className={`flex justify-evenly`}>
-                    <div id='seven'>7</div>
+                    <div id='seven' className={`flex justify-center items-center w-16 h-8 bg-button-bg rounded-t-md rounded-b-xl shadow-sm shadow-black text-xl font-bold`}>
+                        7
+                    </div>
                     <div id='eight'>8</div>
                     <div id='nine'>9</div>
                     <div id='delete'>DEL</div>
