@@ -5,6 +5,7 @@ import Input from "./components/Input";
 function App () {
     const [input, setInput] = useState('Math.sqrt(69)');
     const [output, setOutput] = useState(8.456);
+    const [ans, setAns] = useState(0);
 
     const handleClick = (event) => {
         let key = event.currentTarget.id;
@@ -16,6 +17,9 @@ function App () {
                 break;
             case 'delete':
                 setInput(input.slice(0, input.length - 1));
+                break;
+            case 'answer':
+                setInput(input+'Ans');
                 break;
             default:
                 break;

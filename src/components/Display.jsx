@@ -12,9 +12,9 @@ function Display ({input, output}) {
                     <div id='panel-divider' className={`w-[2px] h-full bg-black`}></div>
                 </div>
 
-                <div id='display' className={`flex flex-col justify-evenly items-center w-[90%] h-[40%] bg-display-bg`}>
+                <div id='display' className={`flex flex-col justify-between items-center w-[90%] h-[40%] bg-display-bg`}>
 
-                    <div id='input-line' className={`w-full text-right text-display-fg font-line-one text-xl font-bold`}>
+                    <div dir='rtl' id='input-line' className={`w-full text-right text-display-fg font-line-one text-xl font-bold overflow-hidden`}>
                         {input}
                     </div>
 
