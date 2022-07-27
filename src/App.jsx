@@ -4,20 +4,21 @@ import Input from "./components/Input";
 
 function App () {
 
-    const [input, setInput] = useState([2, '/', 7]);
-    const [output, setOutput] = useState(2/7);
+    const [input, setInput] = useState([]);
+    const [output, setOutput] = useState(0);
     const [decimal, setDecimal] = useState(false);
     const [ans, setAns] = useState(0);
     const [calculated, setCalculated] = useState(false);
 
     const prepareInput = () => {
+        let unprepped = input.join('');
         if (input.length === 0) {
             return 0;
-        } else if (input.length <= 17) {
-            return input.join('')
+        } else if (unprepped.length <= 17) {
+            return unprepped
                     .replace(/^0{2,}/, '0') // remove leading zeroes
         } else {
-            return input.slice(input.length - 17).join('');
+            return unprepped.slice(unprepped.length - 17);
         }
     }
 
@@ -31,20 +32,25 @@ function App () {
             cleaned = cleaned.replace(/^([-*+/])/, ans.toString() + '$1'); // the weird syntax
         }
 
-        let cal = '() => ' + cleaned + ';';
+        let expression = '() => ' + cleaned + ';';
         let answer;
 
         try {
-            answer = eval(cal);
-            setOutput(answer);
-            setAns(answer);
+            if (/^E/.test(cleaned)) {
+                throw new Error('E is undefined');
+            }
+
+            answer = eval(expression);
+
+            setOutput(answer); // show result
+            setAns(answer); // remember previous result
             setCalculated(true);
 
             // get ready to accept new expressions
             setInput([]);
             setDecimal(false);
         } catch(e) {
-            setOutput('ERROR');
+            setOutput('SYNTAX ERROR');
         }
     }
 
@@ -61,7 +67,8 @@ function App () {
             case 'delete':
                 setInput(input.slice(0, input.length - 1));
                 break;
-            case 'exponent': //case 'answer':
+            case 'exponent':
+                setInput([...input, 'E']);
                 break;
             case 'answer':
                 setInput([...input, ans]);
