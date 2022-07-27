@@ -13,11 +13,16 @@ function Display ({input, output, calculated}) {
                 </div>
 
                 <div className={`relative flex flex-col justify-between items-center w-[90%] h-[40%] bg-display-bg`}>
+                    {/*the display element */}
+                    <div id='display' className={`w-full text-right text-display-bg font-line-one text-xl font-bold overflow-hidden`}>
+                        {calculated ? output : input}
+                    </div>
 
-                    <div id='display' className={`w-full text-right text-display-bg font-line-one text-xl font-bold overflow-hidden`}>{calculated ? output : input}</div>
-                    <div id='input-line' className={`absolute top-0 w-full text-right text-display-fg font-line-one text-xl font-bold overflow-hidden`}>{input}</div>
-
-                    <div id='output-line' className={`w-full text-right text-display-fg font-line-two text-4xl font-bold pr-2`}>
+                    {/*custom 2-line display */}
+                    <div id='input-line' className={`absolute top-0 w-full text-right text-display-fg font-line-one text-xl font-bold`}>
+                        {input}
+                    </div>
+                    <div id='output-line' className={`w-full text-right text-display-fg font-line-two text-4xl font-bold pr-2 overflow-hidden`}>
                         {output}
                     </div>
 

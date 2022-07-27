@@ -4,12 +4,13 @@ import Input from "./components/Input";
 
 function App () {
 
-    const [input, setInput] = useState([]);
-    const [output, setOutput] = useState(0);
-    const [decimal, setDecimal] = useState(false);
-    const [ans, setAns] = useState(0);
-    const [calculated, setCalculated] = useState(false);
+    const [input, setInput] = useState([]); // gets input
+    const [output, setOutput] = useState(0); // controls output
+    const [decimal, setDecimal] = useState(false); // decimal flag: true when a decimal is processed
+    const [ans, setAns] = useState(0); // keeps track of the previous answer
+    const [calculated, setCalculated] = useState(false); // controls the display element
 
+    // show relevant input...handle overflow
     const prepareInput = () => {
         let unprepped = input.join('');
         if (input.length === 0) {
@@ -22,7 +23,9 @@ function App () {
         }
     }
 
+    // calculate result using eval()
     const calculate = () => {
+
         let cleaned = input.join('')
                     .replace(/^0{2,}/, '0') // remove leading zeroes
                     .replace('×', '*') // replace times with asterisk
@@ -37,19 +40,20 @@ function App () {
 
         try {
             if (/^E/.test(cleaned)) {
-                throw new Error('E is undefined');
+                throw new Error("Expression can't start with E");
             }
 
             answer = eval(expression);
 
             setOutput(answer); // show result
-            setAns(answer); // remember previous result
+            setAns(answer); // save result
             setCalculated(true);
 
             // get ready to accept new expressions
             setInput([]);
             setDecimal(false);
         } catch(e) {
+            console.log(e);
             setOutput('SYNTAX ERROR');
         }
     }
